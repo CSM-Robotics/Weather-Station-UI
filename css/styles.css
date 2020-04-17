@@ -1,0 +1,52 @@
+body {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.panel-footer a {
+  font-weight: bold;
+}
+/* END FOOTER */
+
+/*Weather Station Page*/
+#weatherStationTitle, #weatherStationInfo  {
+  color: gray;
+}
+
+.dataBox { 
+  position: relative; /*so we can anchor the <span> relatively*/
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 15px;
+}
+.dataBox span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+}
+.dataBox:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+
+
+/*END Weather Station Page*/
