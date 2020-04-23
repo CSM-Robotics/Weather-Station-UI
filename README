@@ -1,0 +1,7 @@
+What is involved in this website:
+-HTML, CSS (absolutely)
+-AJAX (definitely)
+-Bootstrap 4.0 (we were lazy)
+-Google Charts (we did not specify version to make sure it will always be the newest.
+                but if something goes wrong with charts, it is because Google has updated
+                a new version that did not work with our parameters, good luck fixing).
