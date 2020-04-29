@@ -3,13 +3,18 @@ body {
   color: #fff;
 }
 
+th.ex {
+  color: rgb(204,0,0);
+  font-size: 24px;
+}
+
 /* FOOTER */
 .panel-footer {
   margin-top: 30px;
-  padding-top: 35px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: #222;
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
@@ -19,6 +24,11 @@ body {
 /* END FOOTER */
 
 /*Weather Station Page*/
+#main-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #weatherStationTitle, #weatherStationInfo  {
   color: gray;
 }
@@ -47,6 +57,10 @@ body {
   box-shadow: 0 1px 5px 1px #cccccc;
 }
 
+/*End of Weather Station Page*/
 
 
-/*END Weather Station Page*/
+
+
+
+

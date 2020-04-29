@@ -23,40 +23,37 @@
 
 <body>
 	<!-- the top bar aka header -->
-	<header>
-		<nav class="navbar navbar-dark bg-dark">
-  			<a class="navbar-brand" href="index.html">Robotics Club</a>
-  			<ul class="nav nav-pills">
-			  <li class="nav-item">
-			    <a class="nav-link" href="index.html">About Us</a>
-			  </li>
-			  <li class="nav-item dropdown">
-			    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Our Projects</a>
-			    <div class="dropdown-menu">
-			      <a class="dropdown-item active" href="weatherStation.html">Weather Station</a>
-			        <div class="dropdown-divider"></div>
-			      <a class="dropdown-item" href="nerfgun.html">Automated Nerf Gun</a>
-			        <div class="dropdown-divider"></div>
-			      <a class="dropdown-item" href="#">Waffle Laser Cutter</a>
-			    </div>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link" href="#">Contact Us</a>
-			  </li>
-			</ul>
-		</nav>
+<header>
+	<nav class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand" href="index.html">Robotics Club</a>
+			<ul class="nav nav-pills">
+		  <li class="nav-item">
+		    <a class="nav-link" href="index.html">About Us</a>
+		  </li>
+		  <li class="nav-item dropdown">
+		    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Our Projects</a>
+		    <div class="dropdown-menu">
+		      <a class="dropdown-item active" href="weatherStation.html">Weather Station</a>
+		        <div class="dropdown-divider"></div>
+		      <a class="dropdown-item" href="nerfgun.html">Automated Nerf Gun</a>
+		        <div class="dropdown-divider"></div>
+		      <a class="dropdown-item" href="#">Waffle Laser Cutter</a>
+		    </div>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Contact Us</a>
+		  </li>
+		</ul>
+	</nav>
 
-	</header>
-
-	<!-- main content -->
+</header>
 
 
 
 
-  <!-- Identify where the chart should be drawn. -->
-  <div id="myPieChart"/>
 
-<div id="main-content">
+<!-- main content -->	
+<div class = "col-8" id="main-content">
 		<h1 id="weatherStationTitle"  class="text-center">Weather Data at College of San Mateo</h1>
 	    <div id="weatherStationInfo" class="text-center">
 	      Data collected by NASA-verified sensors.
@@ -64,51 +61,39 @@
 
 	    <section class="row">
 	      <div class="col-lg-4 col-md-6 col-sm-12 ">
-	        <a href="#">
 	          <div class="dataBox">
-	            <span>Radiation</span>
-	          </div>
-	        </a>
-	      </div>
-	      <div class="col-lg-4 col-md-6 col-sm-12 ">
-	        <a href="#">
-	          <div class="dataBox">
-	            <span>Radiation</span>
-	          </div>
-	        </a>
-	      </div>
-	      <div class="col-lg-4 col-md-6 col-sm-12 ">
-	        <a href="#">
-	          <div class="dataBox">
-	            <span>Radiation</span>
-	          </div>
-	        </a>
-	      </div>
-	     
 
-	 
+	            <span>Radiation</span>
+	          </div>
+	        </a>
+	      </div>
+	      <div class="col-lg-4 col-md-6 col-sm-12 dataBox">
+			<div id="chart_div" style="width: 400px; height: 120px;"></div>
+	            
+	       
+	      </div>
 	      
 	    </section>
 </div> 
+<!-- the end of main content -->
+
+
+
+<!--footer-->
+<footer class="panel-footer">
 	
-
-	<!-- the end of main content -->
-
-
-	<footer class="panel-footer">
-		
-		     
-		      <div class="text-center">&copy; Robotics Club @ College of San Mateo 2020</div>
-		      <div class="text-center">Designed by <a href="#" target="_blank"> Artem Dinh </a> and <a href="#" target="_blank"> Yesenia Puga </a> </div>
-		
-	</footer>
+	     
+	      <div class="text-center">&copy; Robotics Club @ College of San Mateo 2020</div>
+	      <div class="text-center">Designed by <a href="#" target="_blank"> Artem Dinh </a> and <a href="#" target="_blank"> Yesenia Puga </a> </div>
+	
+</footer>
 
 
 	<!-- javascript files import -->
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/script.js"></script>
 	<!-- instet chart utilities from google -->
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
