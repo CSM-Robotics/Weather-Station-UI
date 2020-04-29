@@ -2,6 +2,10 @@ body {
   font-size: 16px;
   color: #fff;
 }
+th.ex {
+  color: rgb(204,0,0);
+  font-size: 24px;
+}
 
 th.ex {
   color: rgb(204,0,0);
