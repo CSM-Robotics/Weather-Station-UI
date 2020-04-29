@@ -1,6 +1,12 @@
+html, body {
+  height: 100%;
+}
+
 body {
   font-size: 16px;
   color: #fff;
+  display: flex; /*to make footer at the bottom*/
+  flex-direction: column; /*to make footer at the bottom*/
 }
 th.ex {
   color: rgb(204,0,0);
@@ -18,9 +24,8 @@ th.ex {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #222;
-  position: absolute;
-  bottom: 0;
   width: 100%;
+  flex-shrink: 0;
 }
 .panel-footer a {
   font-weight: bold;
@@ -31,6 +36,7 @@ th.ex {
 #main-content {
   margin-left: auto;
   margin-right: auto;
+  flex: 1 0 auto; /*to make footer at the bottom*/
 }
 
 #weatherStationTitle, #weatherStationInfo  {
