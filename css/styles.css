@@ -39,7 +39,9 @@ th.ex {
   color: gray;
 }
 
-
+section {
+  margin-bottom: 250px;
+}
 /*data box styling*/
 
 .boxContainer {
