@@ -16,7 +16,12 @@
 		<!-- icons library -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	
-		
+		<style>
+			p>span {
+				color: green;
+				font-weight: bold;
+			}
+		</style>
 		  
 </head>
 
@@ -51,95 +56,134 @@
 
 
 <!-- main content -->	
-<div class = "col-10" id="main-content">
+<div class = "col-8" id="main-content">
 		<h1 id="weatherStationTitle"  class="text-center">Weather Data at College of San Mateo</h1>
 	    <div id="weatherStationInfo" class="text-center">
 	      Data collected by NASA-verified sensors.
 	    </div>
 		<!-- data boxes -->
 	    <section class="row">
-	      <div class="col-lg-4 col-md-6 col-sm-12">
+	      <div class="col-xl-6  col-md-12">
 	            <div class="boxContainer">
-	            <div class= "dataBox">
-	            	<span class="chartTitle"> Ligma </span>
+	            <div class= "dataBox active">
+	            	<span class="chartTitle"> Temperature </span>
 	            	<div class="chart"> 
-	            	<div id="chart_div" style="width: ; height: 80px;"></div> </div>
-	            	<p class="chartInfo"> ddsdsfsdf <br> ddsds </p>
+	            	<div id="chart_temp" style="width: ; height: 80px;"></div> </div>
+	            	<p class="chartInfo"> <span id="temperature"></span> <br> ddsds </p>
 	            	<span class="chartHover"> <i class="fas fa-caret-down"></i> Information </span>
 	            </div>
 		            <div class="hoverInfo"> 
-		            		<p>sfdssdfsfdfsdfsdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+		            		<p>
+		            			<ul>
+		            				<li>Measures air temperature in Fahrenheit (°F).</li>
+									<li>Range: -40°F to 185°F (-40°C to 85°C). </li>
+									<li>A human can survive at 140°F for 10 minutes 
+										<a href= "https://www.grunge.com/163968/the-highest-temperature-a-human-can-actually-survive/">Source</a>.</li>
+								</ul>
+		            		</p>
 		            </div>
 	        	</div>
 	      </div>
-	      <div class="col-lg-4 col-md-6 col-sm-12">
+	      <div class="col-xl-6  col-md-12">
 	            <div class="boxContainer">
-	            <div class= "dataBox">
-	            	<span class="chartTitle"> Ligma </span>
+	            <div class= "dataBox active">
+	            	<span class="chartTitle"> Humidity </span>
 	            	<div class="chart"> 
-	            	<div id="chart_div2" style="width: ; height: 80px;"></div> </div>
-	            	<p class="chartInfo"> ddsdsfsdf <br> ddsds </p>
+	            	<div id="chart_hum" style="width: ; height: 80px;"></div> </div>
+	            	<p class="chartInfo"> <span id="humidity"></span> <br> ddsds </p>
 	            	<span class="chartHover"> <i class="fas fa-caret-down"></i> Information </span>
 	            </div>
 		            <div class="hoverInfo"> 
-		            		<p>sfdssdfsfdfsdfsdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+		            		<p>
+		            			<ul>
+		            				<li>Measured in Relative Humidity percentage (% RH).</li>
+									<li>Indicates water vapor concentration (from 0% RH to 100% RH) in the air compared to the maximum amount it can hold at a specific temperature (saturated air has 100% humidity). </li>
+									<li>When humidity is near 100% RH, water vapor condenses and forms fog near the surface (or clouds in the sky).</li>
+								</ul>
+		            		</p>
 		            </div>
 	        	</div>
 	      </div>
-	      <div class="col-lg-4 col-md-6 col-sm-12">
+	      <div class="col-xl-6  col-md-12">
 	            <div class="boxContainer">
-	            <div class= "dataBox">
-	            	<span class="chartTitle"> Ligma </span>
+	            <div class= "dataBox active">
+	            	<span class="chartTitle"> Atmospheric Pressure </span>
 	            	<div class="chart"> 
-	            	<div id="chart_div3" style="width: ; height: 80px;"></div> </div>
-	            	<p class="chartInfo"> ddsdsfsdf <br> ddsds </p>
+	            	<div id="chart_pres" style="width: ; height: 80px;"></div> </div>
+	            	<p class="chartInfo"> <span id="pressure"></span> <br> ddsds </p>
 	            	<span class="chartHover"> <i class="fas fa-caret-down"></i> Information </span>
 	            </div>
 		            <div class="hoverInfo"> 
-		            		<p>sfdssdfsfdfsdfsdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+		            		<p>
+		            			<ul>
+		            				<li>Measures air pressure on Earth’s surface (or other surfaces) in Pascals which indicates air’s force on a square meter. It also shows altitude from sea level.</li>
+									<li>Range: 30,000Pa to 110,000Pa (Altitude Range: 0 to 30,000 ft).</li>
+									<li>101,325  Pa is the average pressure at sea-level and fluctuates depending on weather conditions (wind velocity, gravity, temperature, etc).</li>
+									<li>The higher the altitude is, the lower the atmospheric pressure will be, leading to altitude sickness due to the lack of oxygen in the air.</li>
+								</ul>
+		            		</p>
 		            </div>
 	        	</div>
 	      </div>
-	      <div class="col-lg-4 col-md-6 col-sm-12">
-	            <div class="boxContainer">
-	            <div class= "dataBox">
-	            	<span class="chartTitle"> Ligma </span>
+	  
+	    <div class="col-xl-6  col-md-12">
+	            <div class="boxContainer ">
+	            <div class= "dataBox" >
+	            	<span class="chartTitle"> tVOC </span>
 	            	<div class="chart"> 
-	            	<div id="chart_div4" style="width: ; height: 80px;"></div> </div>
-	            	<p class="chartInfo"> ddsdsfsdf <br> ddsds </p>
+	            	<div id="chart_tvoc" style="width: ; height: 80px;"></div> </div>
+	            	<p class="chartInfo"> <span id="tVOC"></span> <br> ddsds </p>
 	            	<span class="chartHover"> <i class="fas fa-caret-down"></i> Information </span>
 	            </div>
 		            <div class="hoverInfo"> 
-		            		<p>sfdssdfsfdfsdfsdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+		            		<p>
+		            			<ul>
+		            				<li>Measures the amount of Volatile Organic Compounds (VOCs) in the air in parts per billion (ppb).</li>
+		            				<li>Range: 0 to 32,768 parts per billion.</li>
+		            				<li>VOCs are pollutants and/or sensory irritants that come from a variety of sources like trees, animals, or constructions. </li>
+		            				<li>Although VOCs are not used to calculate Air Quality Index, they are helpful to predict photochemical smog. High levels of VOCs (tVOC over 5 ppb) can cause irritation and allergy in sensitive people, or even headaches, loss of coordination and nausea<a href= "https://www.epa.gov/indoor-air-quality-iaq/volatile-organic-compounds-impact-indoor-air-quality">Source</a>.</li>
+		            				<li>Exposing to air with tVOC over 100ppb in long-term can cause nasal cancer<a href= "https://iaqscience.lbl.gov/voc-intro">Source</a>.</li>
+								</ul>
+		            		</p>
 		            </div>
 	        	</div>
 	      </div>
-	      <div class="col-lg-4 col-md-6 col-sm-12">
+	      <div class="col-xl-6  col-md-12">
 	            <div class="boxContainer">
-	            <div class= "dataBox">
-	            	<span class="chartTitle"> Ligma </span>
+	            <div class= "dataBox active">
+	            	<span class="chartTitle"> eCO2 </span>
 	            	<div class="chart"> 
-	            	<div id="chart_div5" style="width: ; height: 80px;"></div> </div>
-	            	<p class="chartInfo"> ddsdsfsdf <br> ddsds </p>
+	            	<div id="chart_eco2" style="width: ; height: 80px;"></div> </div>
+	            	<p class="chartInfo"> <span id="eCO2"></span> <br> ddsds </p>
 	            	<span class="chartHover"> <i class="fas fa-caret-down"></i> Information </span>
 	            </div>
 		            <div class="hoverInfo"> 
-		            		<p>sfdssdfsfdfsdfsdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+		            		<p>
+		            			<ul>
+		            				<li>Another scale to measure Volatile Organic Compounds. Mainly used to measure the greenhouse effect of VOCs compared to CO2. </li>
+		            				<li>eCO2 sensing from 400 parts per million (ppm) to 29,206 ppm.</li>
+								</ul>
+		            		</p>
 		            </div>
 	        	</div>
 	      </div>
-	      <div class="col-lg-4 col-md-6 col-sm-12">
+	      <div class="col-xl-6  col-md-12">
 	            <div class="boxContainer">
-	            <div class= "dataBox">
-	            	<span class="chartTitle"> Ligma </span>
-	            	<div class="chart"> 
-	            	<div id="chart_div6" style="width: ; height: 80px;"></div> </div>
-	            	<p class="chartInfo"> ddsdsfsdf <br> ddsds </p>
-	            	<span class="chartHover"> <i class="fas fa-caret-down"></i> Information </span>
-	            </div>
-		            <div class="hoverInfo"> 
-		            		<p>sfdssdfsfdfsdfsdfsdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
-		            </div>
+		             
+		            		<p class="hoverInfo">
+		            			<ul>
+		            				<li>Detection of Gamma and Beta radiation recorded in one-millionth of a sievert per hour (uSv/h). Sievert quantifies the amount of ionizing radiation absorbed by human tissues.</li>
+		            				<li>Measurement range of 0.05uSv/h to 10mSv/h at 0.01 counts per minute (cpm) to 300Kcpm with a required measurement time of two minutes.</li>
+		            				<li>Examples of some radiation reading of whole dosage in millisievert (uSv) <a href= "https://www.theguardian.com/news/datablog/2011/mar/15/radiation-exposure-levels-guide">Source</a>:
+		            					<ul>
+		            						<li>Typical dosage recorded in those Chernobyl workers who died within a month: 6,000,000 (uSv)</li>
+		            						<li>Single dosage which would cause radiation sickness, or cause fatal cancer many years late in 5% of people: 1,000,000 (uSv)</li>
+		            						<li>Max radiation levels recorded at Fukushima plant, per hour: 400,000 (uSv)</li>
+		            					</ul>
+		            				</li>
+								</ul>
+		            		</p>
+		            
 	        	</div>
 	      </div>
 	    </section>
@@ -167,3 +211,10 @@
 	<script src="js/script.js"></script>
 </body>
 </html>
+<div class= "dataBox active">
+		            	<span class="chartTitle"> Radiation </span>
+		            	<div class="chart"> 
+		            	<div id="chart_rad" style="width: ; height: 80px;"></div> </div>
+		            	<p class="chartInfo"> <span id="radiation"></span> <br> ddsds </p>
+		            	<span class="chartHover"> <i class="fas fa-caret-down"></i> Information </span>
+		            </div>

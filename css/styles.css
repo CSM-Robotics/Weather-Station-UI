@@ -16,12 +16,13 @@ th.ex {
 
 /* FOOTER */
 .panel-footer {
-  margin-top: 30px;
+  margin-top: 200px;
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #222831;
   width: 100%;
   flex-shrink: 0;
+
 }
 .panel-footer a {
   font-weight: bold;
@@ -43,9 +44,9 @@ th.ex {
 /*data box styling*/
 
 .boxContainer {
-  z-index:1;
-  position: relative; 
-  background-color: #DCDCDC;
+  z-index:1; 
+  position: relative;
+  background-color: #61d4b3;
   border: 1px solid #FFF;
   width: 100%;
   height: 200px;
@@ -57,9 +58,9 @@ th.ex {
   transition: height 1s ease;
 }
 .dataBox { 
-  z-index:2;
+  z-index: 2;
   position: relative; /*so we can anchor the <span> relatively*/
-  background-color: #E3F6F5;
+  background-color: #fdd365;
   border: 1px solid #FFF;
   width: 100%;
   height: 200px;
@@ -82,9 +83,8 @@ th.ex {
   font-size: 1.2em;
   text-transform: uppercase;
   font-weight: bold;
-  color: #FFF;
-  text-shadow: -1px 0 #BAE8E8, 0 1px #BAE8E8, 1px 0 #BAE8E8, 0 -1px #BAE8E8;
-  border-bottom: 2px solid #BAE8E8;
+  color: black;
+  border-bottom: 2px solid #FFF;
 }
 
 .chart {
@@ -100,8 +100,6 @@ th.ex {
   margin-right: 50px;
   text-align: center;
   font-weight: bold;
-  color: #FFF;
-  text-shadow: -1px 0 #BAE8E8, 0 1px #BAE8E8, 1px 0 #BAE8E8, 0 -1px #BAE8E8;
 }
 
 .chartHover {
@@ -114,35 +112,33 @@ th.ex {
   font-size: 1.2em;
   font-weight: bold;
   color: #FFF;
-  text-shadow: -1px 0 #BAE8E8, 0 1px #BAE8E8, 1px 0 #BAE8E8, 0 -1px #BAE8E8;
-  border-top: 2px solid #BAE8E8;
+  border-top: 2px solid #FFF;
 }
 
-
-
-
 .hoverInfo { 
-  /*visibility: hidden;  hides sub-menu */
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-.hoverInfo p {
   text-align: center;
   font-size: 1.2em;
   color: #FFF;
   margin: 15px 10px;
+  margin-top: 200px;
   word-wrap: break-word;
+  margin-top: 200px;
 }
 
-.boxContainer:focus,
-.boxContainer:hover {
+
+
+.boxContainer:active,
+ .boxContainer:focus {
   box-shadow: 0 1px 5px 1px #cccccc;
   height: 400px;
 }
 
-
+.boxContainer:active .hoverInfo,
+ .boxContainer:focus .hoverInfo {
+}
 /*End of Weather Station Page*/
 
 

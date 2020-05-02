@@ -1,121 +1,170 @@
-google.charts.load('current', {'packages':['gauge']});
-      google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Memory', 80]
-        ]);
-
-        var options = {
-          width: 400, height: 120,
-          redFrom: 90, redTo: 100,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
-
-        chart.draw(data, options);
-
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div3'));
-
-        chart.draw(data, options);
-
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
+//jquery ajax code to get recordings when website is loaded//
+$(document).ready(function(){
+  $.ajaxSetup({ cache: false, crossDomain : true});
 
 
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div4'));
 
-        chart.draw(data, options);
+  $.get("https://api.csmrobotics.club/api/wss/getAll", function(data){ 
+     var myobj = data[0];
 
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
+     var temp = myobj.temp;
+     var hum = myobj.hum;
+     var pressPa = myobj.pressPa;
+     var tvoc = myobj.tvocpp;
+     var eco2 = myobj.co2ppm;
+     var rad = myobj.count;
 
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div5'));
+    document.getElementById("temperature").innerHTML =  temp + "°F";
+    document.getElementById("humidity").innerHTML = hum + " % RH";
+    document.getElementById("pressure").innerHTML = pressPa + " Pa";
+    document.getElementById("tVOC").innerHTML = tvoc + " ppm";
+    document.getElementById("eCO2").innerHTML = eco2 + " ppm";
+    document.getElementById("radiation").innerHTML = rad + " count";
 
-        chart.draw(data, options);
+    //temperature chart//
+    google.charts.load('current', {'packages':['gauge']});
+          google.charts.setOnLoadCallback(drawTemperature);
 
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
+          function drawTemperature() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['Label', 'Value'],
+              ['(°F)', temp]
+            ]);
+
+            var options = {
+              width: 400, height: 120,
+              min: 0, max: 130,
+              redFrom: 90, redTo: 130,
+              yellowFrom:70, yellowTo: 90,
+              minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('chart_temp'));
+
+            chart.draw(data, options);
+        };//end of temperature chart generating//
+    //humidity chart//
+          google.charts.setOnLoadCallback(drawHumidity);
+
+          function drawHumidity() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['Label', 'Value'],
+              ['(% RH)', hum]
+            ]);
+
+            var options = {
+              width: 400, height: 120,
+              min: 0, max: 130,
+              redFrom: 90, redTo: 130,
+              yellowFrom:70, yellowTo: 90,
+              minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('chart_hum'));
+
+            chart.draw(data, options);
+        };//end of humidity chart generating//
+        //pressure chart//
+          google.charts.setOnLoadCallback(drawPressure);
+
+          function drawPressure() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['Label', 'Value'],
+              ['(Pa)', pressPa]
+            ]);
+
+            var options = {
+              width: 400, height: 120,
+              min: 0, max: 130,
+              redFrom: 90, redTo: 130,
+              yellowFrom:70, yellowTo: 90,
+              minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('chart_pres'));
+
+            chart.draw(data, options);
+        };//end of pressure chart generating//
+        //tVOC chart//
+          google.charts.setOnLoadCallback(drawTVOC);
+
+          function drawTVOC() {
+            var data = google.visualization.arrayToDataTable([
+              ['Label', 'Value'],
+              ['(ppm)', tvoc]
+            ]);
+
+            var options = {
+              width: 400, height: 120,
+              min: 0, max: 130,
+              redFrom: 90, redTo: 130,
+              yellowFrom:70, yellowTo: 90,
+              minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('chart_tvoc'));
+
+            chart.draw(data, options);
+        };//end of tvoc chart generating//
+        //ECo2 chart//
+          google.charts.setOnLoadCallback(drawECO2);
+
+          function drawECO2() {
+            var data = google.visualization.arrayToDataTable([
+              ['Label', 'Value'],
+              ['(ppm)', eco2]
+            ]);
+
+            var options = {
+              width: 400, height: 120,
+              min: 0, max: 130,
+              redFrom: 90, redTo: 130,
+              yellowFrom:70, yellowTo: 90,
+              minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('chart_eco2'));
+
+            chart.draw(data, options);
+        };//end of eCO2 chart generating//
+        //Radiation chart//
+          google.charts.setOnLoadCallback(drawRad);
+
+          function drawRad() {
+            var data = google.visualization.arrayToDataTable([
+              ['Label', 'Value'],
+              ['(count)', rad]
+            ]);
+
+            var options = {
+              width: 400, height: 120,
+              min: 0, max: 130,
+              redFrom: 90, redTo: 130,
+              yellowFrom:70, yellowTo: 90,
+              minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('chart_rad'));
+
+            chart.draw(data, options);
+        };//end of eCO2 chart generating//
+      });//end of json data processing//
+
+}); //end of main function execution//
 
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div6'));
 
-        chart.draw(data, options);
+      
 
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
-      }
+
+
+
+
+
+

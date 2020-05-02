@@ -1,0 +1,2 @@
+[{"id":1,"date":"2020-04-30T05:57:58.000+0000","temp":70.0,"pressPa":1.0,"hum":99.0,"count":4566,"packetNum":1,"deviceInfo":1,"version":0,"co2ppm":400.0,"tvocpp":12.0},
+{"id":2,"date":"2020-04-30T05:57:58.000+0000","temp":90.0,"pressPa":45.0,"hum":1.0,"count":5,"packetNum":1,"deviceInfo":1,"version":0,"co2ppm":450.0,"tvocpp":5.0}]
