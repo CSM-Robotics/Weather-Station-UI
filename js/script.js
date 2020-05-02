@@ -1,10 +1,7 @@
 
 //jquery ajax code to get recordings when website is loaded//
 $(document).ready(function(){
-  $.ajaxSetup({ cache: false, crossDomain : true});
-
-
-
+  $.ajaxSetup({ cache: false, crossDomain : true, xhrFields: {withCredentials: true}});
 
   $.get("https://api.csmrobotics.club/api/wss/getAll", function(data){ 
      var myobj = data[0];
