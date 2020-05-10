@@ -1,9 +1,9 @@
 
 //jquery ajax code to get recordings when website is loaded//
 $(document).ready(function(){
-  $.ajaxSetup({ cache: false, crossDomain : true, xhrFields: {withCredentials: true}});
+  $.ajaxSetup({ cache: false }); //, crossDomain : true, xhrFields: {withCredentials: true}// //add when uploading//
 
-  $.get("https://api.csmrobotics.club/api/wss/getAll", function(data){ 
+  $.get("js/data.json", function(data){ 
      var myobj = data[0];
 
      var temp = myobj.temp;
@@ -23,8 +23,8 @@ $(document).ready(function(){
 
     //temperature chart//
     google.charts.load('current', {'packages':['gauge']});
+          
           google.charts.setOnLoadCallback(drawTemperature);
-
           function drawTemperature() {
 
             var data = google.visualization.arrayToDataTable([
@@ -33,7 +33,7 @@ $(document).ready(function(){
             ]);
 
             var options = {
-              width: 400, height: 120,
+              width: 400, height: 150,
               min: 0, max: 130,
               redFrom: 90, redTo: 130,
               yellowFrom:70, yellowTo: 90,
@@ -55,7 +55,7 @@ $(document).ready(function(){
             ]);
 
             var options = {
-              width: 400, height: 120,
+              width: 400, height: 150,
               min: 0, max: 130,
               redFrom: 90, redTo: 130,
               yellowFrom:70, yellowTo: 90,
@@ -77,7 +77,7 @@ $(document).ready(function(){
             ]);
 
             var options = {
-              width: 400, height: 120,
+              width: 400, height: 150,
               min: 0, max: 130,
               redFrom: 90, redTo: 130,
               yellowFrom:70, yellowTo: 90,
@@ -98,7 +98,7 @@ $(document).ready(function(){
             ]);
 
             var options = {
-              width: 400, height: 120,
+              width: 400, height: 150,
               min: 0, max: 130,
               redFrom: 90, redTo: 130,
               yellowFrom:70, yellowTo: 90,
@@ -119,7 +119,7 @@ $(document).ready(function(){
             ]);
 
             var options = {
-              width: 400, height: 120,
+              width: 400, height: 150,
               min: 0, max: 130,
               redFrom: 90, redTo: 130,
               yellowFrom:70, yellowTo: 90,
@@ -140,7 +140,7 @@ $(document).ready(function(){
             ]);
 
             var options = {
-              width: 400, height: 120,
+              width: 400, height: 150,
               min: 0, max: 130,
               redFrom: 90, redTo: 130,
               yellowFrom:70, yellowTo: 90,

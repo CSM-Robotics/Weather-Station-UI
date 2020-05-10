@@ -1,10 +1,11 @@
 html, body {
   height: 100%;
+  font-family: "Quicksand",Arial,sans-serif
 }
 
 body {
   font-size: 16px;
-  color: #fff;
+  color: black;
   display: flex; /*to make footer at the bottom*/
   flex-direction: column; /*to make footer at the bottom*/
 }
@@ -22,130 +23,253 @@ th.ex {
   background-color: #222831;
   width: 100%;
   flex-shrink: 0;
-
+  color: #fff;
 }
 .panel-footer a {
   font-weight: bold;
 }
 /* END FOOTER */
 
+
+
+
+
 /*Weather Station Page*/
-#main-content {
+.main-content {
   margin-left: auto;
   margin-right: auto;
   flex: 1 0 auto; /*to make footer at the bottom*/
 }
 
-#weatherStationTitle, #weatherStationInfo  {
-  color: gray;
+.projectHeader {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-section {
-  margin-bottom: 250px;
+
+#weatherStationTitle, #weatherStationInfo  {
+  color: gray;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.projectContributors {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 /*data box styling*/
 
-.boxContainer {
-  z-index:1; 
+.mainContainer {
   position: relative;
-  background-color: #61d4b3;
-  border: 1px solid #FFF;
+  background: transparent;
+  color: black; /*text color default*/
+  border: 2px solid #DEDEDE;
   width: 100%;
-  min-height: 200px;
-  margin: 10px;
-  border-radius: 35px;
-  overflow: hidden;
+  height: 350px;
+  cursor: default; 
   /*flex property to fit elements*/
   display: flex;
-  transition: height 1s ease;
+  flex-wrap: wrap;
 }
-.dataBox { 
+
+
+
+.dataContainer { 
   z-index: 2;
-  position: relative; /*so we can anchor the <span> relatively*/
-  background-color: #fdd365;
-  border: 1px solid #FFF;
-  width: 100%;
-  height: 200px;
-  border-radius: 35px;
-  /*flex property to fit elements*/
+  margin-left: 15px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
   align-items: center;
-  align-content: center;
+  justify-content: center;
 }
 
 
-.chartTitle {
-  flex: none;
+
+
+.dataInfo {
+  z-index: 2;
+  position: relative;
+  width: 60%;
+  height: 100%;
+  margin-left: 7%;
+  margin-right: 10px;
+}
+
+
+
+/* left side*/
+.chart {
+}
+
+.dataValue {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+/*right side*/
+.dataInfo>h2 {
   position: absolute;
   top: 0;
   right: 0;
+  margin-top: 30px;
   width: 100%;
-  text-align: center;
-  font-size: 1.2em;
+  font-size: 40px;
   text-transform: uppercase;
   font-weight: bold;
   color: black;
-  border-bottom: 2px solid #FFF;
+  transition: opacity 1s ease;
 }
 
-.chart {
-  flex-grow: 1;
-  margin-left: 20px;
-  margin-bottom: 30px;
+/* information content */
 
+
+.binfo {
+  margin-top: 80px;
+  color: white;
+  font-size: 20px;
+  visibility: hidden;
+}
+.source {
+  color: white;
 }
 
-.chartInfo {
-  flex-grow: 2;
-  margin: auto;
-  margin-right: 50px;
-  text-align: center;
-  font-weight: bold;
-}
 
-.chartHover {
-  flex: none;
+/* hover suggestion text*/
+.hoverSuggest {
   position: absolute;
   bottom: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
   width: 100%;
   text-align: center;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #FFF;
-  border-top: 2px solid #FFF;
+  font-size: 20px;
+  font-style: italic;
+  color: black;
+}
+/*medium screen responsive design*/
+ @media (min-width: 900px) and (max-width: 1270px) {
+
+      .mainContainer {
+        height: 380px;
+      }
+
+}
+/*phone screen*/
+ @media (max-width: 899px) {
+      .mainContainer {
+        flex-wrap: nowrap;
+        height: 500px;
+      }
+      .dataContainer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        justify-content: right;
+        flex-direction: row; 
+        margin-top: 30px;
+        margin-right: 30px;
+      }
+      .dataInfo {
+        margin-top: 80px;
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 25px;
+      }
+      .binfo {
+        margin-top: 15%;
+        font-size: 18px;
+      }
+
 }
 
-.hoverInfo { 
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-  color: #FFF;
-  margin: 15px 10px;
-  margin-top: 200px;
-  word-wrap: break-word;
-  margin-top: 200px;
-}
-
-
-
-.boxContainer:active,
- .boxContainer:focus {
-  box-shadow: 0 1px 5px 1px #cccccc;
-  min-height: 350px;
-  overflow: hidden;
-}
-
-.boxContainer:active .hoverInfo,
- .boxContainer:focus .hoverInfo {
+@media (max-width: 499px) {
+      .dataInfo {
+        margin-top: 140px;
+      }
+      .binfo {
+        font-size: 14px;
+      }
 }
 /*End of Weather Station Page*/
 
+/*animation*/
+.hover {
+  z-index: 1;
+  position: absolute;
+}
+.purple {
+  left:0;
+  background-color: #ff0d7b;
+  height: 100%;
+  width: 0px;
+  transition: width 1s ease;
+}
+
+.blue {
+  right:0;
+  background-color: #342ead;
+  height: 100%;
+  width: 0px;
+  transition: width 1s ease;
+}
+.orange {
+  background-color: #feb72b;
+  top:0;
+  height: 0px;
+  width: 100%;
+  transition: height 1s ease;
+}
 
 
+.green {
+  background-color: #1fab89;
+  bottom:0;
+  height: 0px;
+  width: 100%;
+  transition: height 1s ease;
+}
+
+.pink {
+  background-color: #ff6666;
+  top:0;
+  height: 0px;
+  width: 100%;
+  transition: height 1s ease;
+}
+
+.violete {
+  background-color: #916dd5;
+  bottom:0;
+  right: 0;
+  height: 100%;
+  width: 0px;
+  transition: width 1s ease;
+}
 
 
+    
+.mainContainer:hover .hover,
+.mainContainer:focus .hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+  width: 100%;
+  height: 100%;
+}
+.mainContainer:hover .hoverSuggest,
+.mainContainer:focus .hoverSuggest {
+  visibility: hidden;
+}
+
+.mainContainer:hover .binfo,
+.mainContainer:focus .binfo {
+  visibility: visible;
+}
+.mainContainer:hover .dataInfo>h2,
+.mainContainer:focus .dataInfo>h2 {
+  opacity: 0.15;
+}
+
+/*end of animation*/
 
