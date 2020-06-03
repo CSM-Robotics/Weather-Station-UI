@@ -12,11 +12,13 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<!-- link own styling -->
 		<link rel="stylesheet" href="css/styles.css">
+		<!-- link slides styling -->
+		<link rel="stylesheet" href="css/card_css.css">
 		<!-- icons library -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	</head>
 
-
+<script src="js/jquery-3.4.1.min.js"></script>
 <body>
 	<!-- the top bar aka header -->
 	<header>
@@ -52,36 +54,33 @@
 	    </div>
 
 	
-<!-- code for table -->
-<table class="table table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope ="col" class="ex">Modifications</th>
-      <th scope="col" class="ex">What does it do?</th>
-      <th scope="col" class="ex">Item</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Scope</th>
-      <td>A telescopic sight, commonly called a scope, is an optical sighting device that is based on a refracting telescope.</td>
-      <td>
-	<img src="images/scope.jpg" width="150" height="150" alt="scope">
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Grip</th>
-      <td>Have a better grip of the nerft gun when you shoot</td>
-      <td><img src="images/grip.jpg" width="150" height="150" alt="grip"</td>
-    </tr>
-    <tr>
-      <th scope="row">Laser</th>
-      <td>Description</td>
-      <td><img src="images/laser.jpg" width="150" height="150" alt="laser"> </td>
-    </tr>
-  </tbody>
-</table>
-<!-- end of code for table -->
+<!-- This code creates the carousel-->
+  <div class="scene">
+    <div class="carousel">
+      <div class="carousel__cell">
+        <img class= my_image src="images/nerfgun.jpg" alt="Nerf Gun">
+        <p class="spef_text">Note: This nerf gun is not really moified</p>
+      </div>
+      <div class="carousel__cell">
+        <img class= my_image src="images/laser.jpg" alt="Laser">
+        <p class="spef_text">Makes it easier to shoot target</p>
+      </div>
+      <div class="carousel__cell">
+        <img class= my_image src="images/grip.jpg" alt="Grip">
+        <p class="spef_text">Have a better grip of the nerft gun when you shoot</p>
+      </div>
+      <div class="carousel__cell">
+        <img class= my_image src="images/scope.jpg" alt="Scope">
+        <p class="spef_text">An optical sighting device that is based on a refracting telescope</p>
+      </div>
+    </div>
+  </div>
+<!-- end of carousel code-->
+  <div class="carousel-options">
+    <button class="previous-button">Previous</button>
+    <button class="next-button">Next</button>
+  </div>
+	
 </div>
 <!-- the end of main content -->
 	
@@ -98,6 +97,7 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="card_js.js"></script>
 
 </body>
 </html>
